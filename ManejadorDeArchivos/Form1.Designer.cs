@@ -37,6 +37,7 @@ namespace ManejadorDeArchivos
             this.listView1 = new System.Windows.Forms.ListView();
             this.iconList = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.info_label = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
             this.tbox = new System.Windows.Forms.TextBox();
@@ -86,6 +87,7 @@ namespace ManejadorDeArchivos
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(322, 530);
             this.treeView1.TabIndex = 0;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // groupBox2
             // 
@@ -114,6 +116,7 @@ namespace ManejadorDeArchivos
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
             // iconList
@@ -126,6 +129,7 @@ namespace ManejadorDeArchivos
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.info_label);
             this.groupBox1.Controls.Add(this.listView2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -135,6 +139,16 @@ namespace ManejadorDeArchivos
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información";
+            // 
+            // info_label
+            // 
+            this.info_label.AutoSize = true;
+            this.info_label.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.info_label.Location = new System.Drawing.Point(7, 25);
+            this.info_label.Name = "info_label";
+            this.info_label.Size = new System.Drawing.Size(20, 18);
+            this.info_label.TabIndex = 1;
+            this.info_label.Text = "...";
             // 
             // listView2
             // 
@@ -146,6 +160,7 @@ namespace ManejadorDeArchivos
             this.listView2.Size = new System.Drawing.Size(636, 76);
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -279,6 +294,7 @@ namespace ManejadorDeArchivos
             this.splitContainer1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -307,6 +323,7 @@ namespace ManejadorDeArchivos
         private System.Windows.Forms.ToolStripMenuItem informacionDeSesionesAnterioresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarToolStripMenuItem;
         private System.Windows.Forms.ImageList iconList;
+        private System.Windows.Forms.Label info_label;
     }
 }
 
